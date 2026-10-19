@@ -1,21 +1,25 @@
+
 import { Link } from "react-router-dom";
 import products from "../products.js";
 
 function Home() {
+  const imagePath = (path) =>
+    `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
   const categories = [
     {
       name: "Luxury Fashion",
-      image: "/images/dress.jpg",
+      image: imagePath("/images/dress.jpg"),
       description: "Elegant looks for every occasion",
     },
     {
       name: "Handbags",
-      image: "/images/handbag.jpg",
+      image: imagePath("/images/handbag.jpg"),
       description: "The finishing touch to your style",
     },
     {
       name: "Accessories",
-      image: "/images/accessories.jpg",
+      image: imagePath("/images/accessories.jpg"),
       description: "Beautiful details, timeless appeal",
     },
   ];
@@ -24,22 +28,19 @@ function Home() {
 
   return (
     <main className="home-page">
-      {/* Announcement bar */}
       <div className="announcement-bar">
         DISCOVER TIMELESS ELEGANCE — EXPLORE OUR COLLECTION
       </div>
 
-      {/* Main fashion banner */}
       <section id="home" className="hero-section">
         <img
-          src="/images/hero.jpg"
+          src={imagePath("/images/hero.jpg")}
           alt="Baroque inspired fashion collection"
           className="hero-image"
         />
 
         <div className="hero-content">
           <p className="hero-subtitle">THE ART OF ELEGANCE</p>
-
           <h2>Own Your Timeless Look</h2>
 
           <p>
@@ -53,7 +54,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Category collection */}
       <section className="home-categories">
         <div className="home-section-heading">
           <p className="section-eyebrow">CURATED FOR YOU</p>
@@ -83,7 +83,6 @@ function Home() {
         </div>
       </section>
 
-      {/* New arrivals */}
       <section className="home-new-arrivals">
         <div className="home-section-heading">
           <p className="section-eyebrow">JUST ARRIVED</p>
@@ -94,14 +93,8 @@ function Home() {
         <div className="home-product-grid">
           {newArrivals.map((product) => (
             <article className="home-product-card" key={product.id}>
-              <Link
-                to="/shop"
-                className="home-product-image"
-              >
-                <img
-                  src={product.image}
-                  alt={product.name}
-                />
+              <Link to="/shop" className="home-product-image">
+                <img src={product.image} alt={product.name} />
               </Link>
 
               <p className="home-product-category">
@@ -128,18 +121,16 @@ function Home() {
         </div>
       </section>
 
-      {/* Editorial fashion banner */}
       <section className="home-editorial">
         <div className="editorial-image">
           <img
-            src="/images/dress.jpg"
+            src={imagePath("/images/dress.jpg")}
             alt="Elegant fashion from our collection"
           />
         </div>
 
         <div className="editorial-content">
           <p className="section-eyebrow">TIMELESS BY DESIGN</p>
-
           <h2>Elegance in Every Detail</h2>
 
           <p>
@@ -153,7 +144,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Brand benefits */}
       <section className="home-benefits">
         <div className="home-section-heading">
           <p className="section-eyebrow">THE BAROQUE EXPERIENCE</p>
@@ -181,18 +171,15 @@ function Home() {
         </div>
       </section>
 
-           
-      {/* Final fashion banner before footer */}
       <section className="home-final-banner">
         <img
-          src="/images/banner.jpg"
+          src={imagePath("/images/banner.jpg")}
           alt="Elegant Baroque-inspired fashion collection"
           className="bottom-banner-image"
         />
 
         <div className="bottom-banner-content">
           <p className="section-eyebrow">THE ART OF ELEGANCE</p>
-
           <h2>Discover Your Signature Style</h2>
 
           <p>
@@ -205,7 +192,6 @@ function Home() {
           </Link>
         </div>
       </section>
-
     </main>
   );
 }

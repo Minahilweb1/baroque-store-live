@@ -1,4 +1,7 @@
 
+const imagePath = (path) =>
+  `${import.meta.env.BASE_URL}${path.replace(/^\/+/, "")}`;
+
 const products = [
   {
     id: 1,
@@ -6,7 +9,7 @@ const products = [
     category: "Fashion",
     description: "Elegant Baroque-inspired fashion for special occasions.",
     price: 120,
-    image: "/images/dress.jpg"
+    image: imagePath("images/dress.jpg"),
   },
   {
     id: 2,
@@ -14,7 +17,7 @@ const products = [
     category: "Accessories",
     description: "Luxury design with timeless details.",
     price: 85,
-    image: "/images/handbag.jpg"
+    image: imagePath("images/handbag.jpg"),
   },
   {
     id: 3,
@@ -22,7 +25,7 @@ const products = [
     category: "Luxury",
     description: "Beautiful accessories for a royal look.",
     price: 50,
-    image: "/images/accessories.jpg"
+    image: imagePath("images/accessories.jpg"),
   },
   {
     id: 4,
@@ -30,7 +33,7 @@ const products = [
     category: "Jewelry",
     description: "An elegant golden necklace inspired by Baroque style.",
     price: 70,
-    image: "/images/necklace.jpg"
+    image: imagePath("images/necklace.jpg"),
   },
   {
     id: 5,
@@ -38,7 +41,7 @@ const products = [
     category: "Fashion",
     description: "A sophisticated look for celebrations and events.",
     price: 145,
-    image: "/images/img1.jpg"
+    image: imagePath("images/img1.jpg"),
   },
   {
     id: 6,
@@ -46,7 +49,7 @@ const products = [
     category: "Accessories",
     description: "A timeless accessory for your everyday wardrobe.",
     price: 95,
-    image: "/images/shoulder bags.jpg"
+    image: imagePath("images/shoulder bags.jpg"),
   },
   {
     id: 7,
@@ -54,7 +57,7 @@ const products = [
     category: "Jewelry",
     description: "Statement earrings with a classic golden finish.",
     price: 40,
-    image: "/images/earings.jpg"
+    image: imagePath("images/earings.jpg"),
   },
   {
     id: 8,
@@ -62,8 +65,8 @@ const products = [
     category: "Luxury",
     description: "An elegant finishing touch for evening outfits.",
     price: 65,
-    image: "/images/cluch.jpg"
-  }
+    image: imagePath("images/cluch.jpg"),
+  },
 ];
 
 export default products;
